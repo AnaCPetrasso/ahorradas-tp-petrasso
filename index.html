@@ -10,48 +10,44 @@
 </head>
 
 <body class="h-screen w-screen">
-    <header class="h-16 lg:h-1/5">
+    <header class="h-16 lg:h-1/5" id="headerSection">
         <nav class="navbar bg-green-500 shadow-lg text-white py-4" role="navigation" aria-label="main navigation">
-            <div class="container mx-auto">
-                <div class="flex justify-between items-center">
-                    <div class="navbar-brand">
-                        <a class="navbar-item">
-                            <h1 class="title text-3xl">
-                                <i class="fas fa-wallet mr-2" aria-hidden="true"></i>
-                                AhorrADAs
-                            </h1>
-                        </a>
-                    </div>
-                    <div class="lg:hidden">
-                        <div class="navbar-burger burger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                    <div class="hidden lg:block">
-                        <div class="navbar-menu">
-                            <div class="navbar-end">
-                                <a class="navbar-item mx-2" id="balanceNavbarItem">
-                                    <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>Balance
-                                </a>
-                                <a class="navbar-item mx-2" id="categoriesNavbarItem">
-                                    <i class="fas fa-tag mr-2" aria-hidden="true"></i>Categories
-                                </a>
-                                <a class="navbar-item mx-2" id="reportsNavbarItem">
-                                    <i class="fas fa-chart-pie mr-2" aria-hidden="true"></i>Reports
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+          <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+              <div class="navbarBrand">
+                <a class="navbar-item">
+                  <h1 class="title text-3xl">
+                    <i class="fas fa-wallet mr-2" aria-hidden="true"></i>
+                    AhorrADAs
+                  </h1>
+                </a>
+              </div>
+              <div class="lg:hidden">
+                <div class="navbarBurger burger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
+              </div>
+              <div class="hidden lg:flex">
+                <div class="navbarMenu">
+                  <div class="navbarEnd">
+                    <a class="navbarItem mx-2" id="navbarItemBalance">
+                      <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>Balance
+                    </a>
+                    <a class="navbarItem mx-2" id="navbarItemCategories">
+                      <i class="fas fa-tag mr-2" aria-hidden="true"></i>Categories
+                    </a>
+                    <a class="navbarItem mx-2" id="navbarItemReports">
+                      <i class="fas fa-chart-pie mr-2" aria-hidden="true"></i>Reports
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </nav>
-    </header>
-
-    <main>
-
-    </main>
+      </header>   
 </body>
 
 </html>
