@@ -32,13 +32,13 @@
               <div class="hidden lg:flex">
                 <div class="navbarMenu">
                   <div class="navbarEnd">
-                    <a class="navbarItem mx-2" id="navbarItemBalance">
+                    <a class="navbarItem mx-2" id="navbarItemBalance" data-section="balanceView">
                       <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>Balance
                     </a>
-                    <a class="navbarItem mx-2" id="navbarItemCategories">
+                    <a class="navbarItem mx-2" id="navbarItemCategories" data-section="categoryView">
                       <i class="fas fa-tag mr-2" aria-hidden="true"></i>Categories
                     </a>
-                    <a class="navbarItem mx-2" id="navbarItemReports">
+                    <a class="navbarItem mx-2" id="navbarItemReports" data-section="reportsView">
                       <i class="fas fa-chart-pie mr-2" aria-hidden="true"></i>Reports
                     </a>
                   </div>
@@ -50,7 +50,7 @@
     </header>
     <main>
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BALANCE SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <section class="bg-gray-100 py-10" id="balanceView">
+        <section class="section bg-gray-100 py-10" id="balanceView">
             <div class="container mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="md:col-span-1">
@@ -196,7 +196,7 @@
             </div>
         </section>
         <!-- ~~~~~~~~~~~~~~~~~~~~~ REPORT SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        <section class="bg-gray-100 py-10" id="viewReports">
+        <section class="section bg-gray-100 py-10" id="reportsView">
             <div class="container mx-auto px-4">
                 <div class="lg:flex">
                     <div class="lg:w-8/12 xl:w-10/12 mx-auto">
