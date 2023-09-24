@@ -366,6 +366,69 @@
         </section>
           
           
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~ EDIT OPERATIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <section>
+            <section class="bg-gray-100 py-10" id="editTransactionView">
+                <div class="container mx-auto px-4">
+                  <div class="lg:flex justify-center">
+                    <div class="lg:w-8/12 xl:w-10/12">
+                      <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h2 class="text-3xl font-semibold text-gray-800 mb-6">Edit Operation</h2>
+                        <div class="mt-6">
+                          <label class="text-gray-700" for="editDescriptionInput">Description</label>
+                          <div class="mt-2">
+                            <input class="border border-gray-300 rounded w-full py-2 px-3" type="text" name="" id="editDescriptionInput">
+                          </div>
+                        </div>
+                        <div class="mt-4">
+                          <label class="text-gray-700" for="editAmountInput">Amount</label>
+                          <div class="mt-2">
+                            <input class="border border-gray-300 rounded w-full py-2 px-3" type="number" name="" id="editAmountInput">
+                          </div>
+                        </div>
+                        <div class="mt-4">
+                          <label class="text-gray-700" for="editTransactionType">Type</label>
+                          <div class="mt-2">
+                            <select class="border border-gray-300 rounded w-full py-2 px-3" id="editTransactionType">
+                              <option value="EXPENSE">Expense</option>
+                              <option value="INCOME">Income</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="mt-4">
+                          <label class="text-gray-700" for="editCategorySelect">Category</label>
+                          <div class="mt-2">
+                            <select class="border border-gray-300 rounded w-full py-2 px-3" id="editCategorySelect">
+                              <option value="baa6390f-573e-4ffd-87d7-17a69431e05b">Services</option>
+                              <option value="1e724394-a909-4ecb-b2a3-0578937f8600">Outings</option>
+                              <option value="ab80cdf1-a384-45ab-8c31-bf8ab5d61314">Education</option>
+                              <option value="18bc9486-9d2f-437a-8bea-ecfa7ba5de86">Transport</option>
+                              <option value="fd602d32-37fa-4d6a-a052-27ba78dad1e6">Work</option>
+                              <option value="dfbc168f-3cb5-464f-9995-a3b6b6ebb369">Food</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="mt-4">
+                          <label class="text-gray-700" for="editDateInput">Date</label>
+                          <div class="mt-2">
+                            <input class="border border-gray-300 rounded w-full py-2 px-3" type="date" name="" id="editDateInput">
+                          </div>
+                        </div>
+                        <div class="flex justify-end mt-6 space-x-4">
+                          <button class="bg-gray-300 text-gray-700 hover:bg-gray-400 rounded px-4 py-2" id="cancelEditTransactionButton">
+                            Cancel
+                          </button>
+                          <button class="bg-green-500 text-white hover:bg-green-600 rounded px-4 py-2" id="editTransactionButton">
+                            Edit
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
+        </section>
     </main>
 </body>
 
