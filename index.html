@@ -47,7 +47,120 @@
             </div>
           </div>
         </nav>
-      </header>   
+    </header>
+    <main>
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BALANCE SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <section class="bg-gray-100 py-10" id="balanceView">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="md:col-span-1">
+                        <!-- balance -->
+                        <div class="bg-white rounded-lg p-6 shadow">
+                            <h2 class="text-xl font-semibold mb-4">Balance Summary</h2>
+                            <div class="flex justify-between items-center mb-2">
+                                <p class="text-gray-700">Earnings</p>
+                                <p class="text-green-600 font-semibold" id="earnings">+$0</p>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <p class="text-gray-700">Expenses</p>
+                                <p class="text-red-600 font-semibold" id="expenses">-$0</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <p class="text-lg font-semibold">Total</p>
+                                <p class="font-semibold" id="totalAmount">$0</p>
+                            </div>
+                        </div>
+                        <!-- filters -->
+                        <div class="mt-4 bg-white rounded-lg p-6 shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-semibold">Filters</h3>
+                                <a href="#" id="toggleFilters" class="text-blue-600">Hide filters</a>
+                            </div>
+                            <div id="filters">
+                                <div class="mb-4">
+                                    <label for="filterType" class="block text-gray-700 font-semibold">Type</label>
+                                    <div class="relative">
+                                        <select id="filterType"
+                                            class="block w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-400">
+                                            <option value="ALL">All</option>
+                                            <option value="EXPENSE">Expense</option>
+                                            <option value="INCOME">Income</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="filterCategory" class="block text-gray-700 font-semibold">Category</label>
+                                    <div class="relative">
+                                        <select id="filterCategory"
+                                            class="block w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-400">
+                                            <option value="ALL">All</option>
+                                            <!-- add options js -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="filterDate" class="block text-gray-700 font-semibold">From</label>
+                                    <input type="date" id="filterDate"
+                                        class="block w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-400">
+                                </div>
+                                <div>
+                                    <label for="filterOrder" class="block text-gray-700 font-semibold">Sort by</label>
+                                    <div class="relative">
+                                        <select id="filterOrder"
+                                            class="block w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-400">
+                                            <option value="MOST_RECENT">Most recent</option>
+                                            <option value="LEAST_RECENT">Least recent</option>
+                                            <option value="HIGHEST_AMOUNT">Highest amount</option>
+                                            <option value="LOWEST_AMOUNT">Lowest amount</option>
+                                            <option value="A/Z">A/Z</option>
+                                            <option value="Z/A">Z/A</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- operations -->
+                    <div class="md:col-span-2">
+                        <div class="bg-white rounded-lg p-6 shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-semibold">Operations</h3>
+                                <button type="button"
+                                    class="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 focus:outline-none"
+                                    id="newOperation">+ New operation</button>
+                            </div>
+                            <div class="my-6 py-6" id="noOperations">
+                                <figure class="w-24 mx-auto">
+                                    <img src="img/wallet.svg" class="w-full" alt="Wallet icon">
+                                </figure>
+                                <h4 class="text-xl font-semibold text-center mt-6 mb-4">No results</h4>
+                                <p class="text-center">Change filters or add operations</p>
+                            </div>
+                            <div id="withOperations" class="hidden">
+                                <div class="table w-full">
+                                    <table class="w-full table-auto">
+                                        <thead>
+                                            <tr>
+                                                <th class="px-4 py-2">Description</th>
+                                                <th class="px-4 py-2">Category</th>
+                                                <th class="px-4 py-2 text-right">Date</th>
+                                                <th class="px-4 py-2 text-right">Amount</th>
+                                                <th class="px-4 py-2">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="operationsTable">
+                                            <!-- add operations with js -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
 </body>
 
 </html>
