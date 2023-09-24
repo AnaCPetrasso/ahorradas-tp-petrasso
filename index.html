@@ -50,6 +50,124 @@
     </header>
 
     <main>
+        <!-- ~~~~~~~~~~~~~~~~~~~~~ REPOR SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+        <section class="section mt-5 vista" id="vista-reports">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-8-widescreen is-10-desktop is-offset-2-widescreen is-offset-1-desktop">
+                        <div class="box">
+                            <h2 class="title is-2 font-bold pb-2">
+                                Reportes
+                            </h2>
+                            <div id="sin-reports" class="hidden">
+                                <div class="my-6 py-6">
+                                    <figure class="image">
+                                        <img src="imgs/chart.svg" class="" alt="">
+                                    </figure>
+                                    <h4 class="text-2xl has-text-centered mt-6 mb-4 font-semibold">
+                                        Operaciones insuficientes
+                                    </h4>
+                                    <p class="has-text-centered">
+                                        Prueba agregando más operaciones
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Resumen -->
+                            <div id="con-reports" class="">
+                                <section class="section mb-5" id="resumen">
+                                    <h4 class="title is-4 mb-5 pb-4">Resumen</h4>
+                                    <!-- Categoría con mayor ganancia -->
+                                    <div class="grid grid-cols-12">
+                                        <div class="col-span-6 font-semibold">
+                                            Categoría con mayor ganancia
+                                        </div>
+                                        <div class="col-span-3 text-right">
+                                            <span class="bg-primary text-white py-1 px-2 rounded-lg"
+                                                id="bigProfitCategory">Trabajo</span>
+                                        </div>
+                                        <div class="col-span-3 font-semibold text-right text-success"
+                                            id="bigProfitTotal">+$200</div>
+                                    </div>
+                                    <!-- Categoría con mayor gasto -->
+                                    <div class="grid grid-cols-12 mt-2">
+                                        <div class="col-span-6 font-semibold">
+                                            Categoría con mayor gasto
+                                        </div>
+                                        <div class="col-span-3 text-right">
+                                            <span class="bg-primary text-white py-1 px-2 rounded-lg"
+                                                id="bigSpentCategory">Servicios</span>
+                                        </div>
+                                        <div class="col-span-3 font-semibold text-right text-danger" id="bigSpentTotal">
+                                            -$25</div>
+                                    </div>
+                                    <!-- Categoría con mayor balance -->
+                                    <div class="grid grid-cols-12 mt-2">
+                                        <div class="col-span-6 font-semibold">
+                                            Categoría con mayor balance
+                                        </div>
+                                        <div class="col-span-3 text-right">
+                                            <span class="bg-primary text-white py-1 px-2 rounded-lg"
+                                                id="bigBalanceCategory">Trabajo</span>
+                                        </div>
+                                        <div class="col-span-3 font-semibold text-right" id="bigBalanceTotal">$200</div>
+                                    </div>
+                                    <!-- Mes con mayor ganancia -->
+                                    <div class="grid grid-cols-12 mt-2">
+                                        <div class="col-span-6 font-semibold">
+                                            Mes con mayor ganancia
+                                        </div>
+                                        <div class="col-span-3 text-right" id="bigProfitMonth">2023/04/15</div>
+                                        <div class="col-span-3 font-semibold text-right text-success"
+                                            id="bigProfitMonthTotal">$200</div>
+                                    </div>
+                                    <!-- Mes con mayor gasto -->
+                                    <div class="grid grid-cols-12 mt-2">
+                                        <div class="col-span-6 font-semibold">
+                                            Mes con mayor gasto
+                                        </div>
+                                        <div class="col-span-3 text-right" id="bigSpentMonth">2023/09/24</div>
+                                        <div class="col-span-3 font-semibold text-right text-danger"
+                                            id="bigSpentMonthTotal">-$25</div>
+                                    </div>
+                                </section>
+                                <!-- Totales por categoría -->
+                                <section class="section mb-5">
+                                    <h4 class="title is-4 mb-5 pb-4">
+                                        Totales por categorías
+                                    </h4>
+                                    <div id="reporte-categorias">
+                                        <div class="grid grid-cols-12">
+                                            <div class="col-span-6 font-semibold">
+                                                Categoría
+                                            </div>
+                                            <div class="col-span-3 font-semibold text-right">Ganancias</div>
+                                            <div class="col-span-3 font-semibold text-right">Gastos</div>
+                                        </div>
+                                        <!-- Category data added dynamically with JavaScript -->
+                                    </div>
+                                </section>
+                                <!-- Totales por mes -->
+                                <section class="section">
+                                    <h3 class="title is-4 mb-5 pb-4">Totales por mes</h3>
+                                    <div id="reporte-mes">
+                                        <div class="grid grid-cols-12">
+                                            <div class="col-span-6 font-semibold">
+                                                Mes
+                                            </div>
+                                            <div class="col-span-3 font-semibold text-right">Ganancias</div>
+                                            <div class="col-span-3 font-semibold text-right">Gastos</div>
+                                        </div>
+                                        <!-- Month data added dynamically with JavaScript -->
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
 
     </main>
 </body>
