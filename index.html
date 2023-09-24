@@ -304,6 +304,68 @@
                 </div>
             </div>
         </section>
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NEW OPERATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <section class="bg-gray-100 py-10" id="operationView">
+            <div class="container mx-auto px-4">
+              <div class="lg:flex justify-center">
+                <div class="lg:w-8/12 xl:w-10/12">
+                  <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-6">New Transaction</h2>
+                    <div class="mt-6">
+                      <label class="text-gray-700" for="descriptionInput">Description</label>
+                      <div class="mt-2">
+                        <input class="border border-gray-300 rounded w-full py-2 px-3" type="text" name="" id="descriptionInput" placeholder="Enter description">
+                      </div>
+                    </div>
+                    <div class="mt-4">
+                      <label class="text-gray-700" for="amountInput">Amount</label>
+                      <div class="mt-2">
+                        <input class="border border-gray-300 rounded w-full py-2 px-3" type="number" name="" id="amountInput" placeholder="Enter amount" value="0">
+                      </div>
+                    </div>
+                    <div class="mt-4">
+                      <label class="text-gray-700" for="operationType">Type</label>
+                      <div class="mt-2">
+                        <select class="border border-gray-300 rounded w-full py-2 px-3" id="operationType">
+                          <option value="EXPENSE">Expense</option>
+                          <option value="INCOME">Income</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mt-4">
+                      <label class="text-gray-700" for="categorySelect">Category</label>
+                      <div class="mt-2">
+                        <select class="border border-gray-300 rounded w-full py-2 px-3" id="categorySelect">
+                          <option value="services">Services</option>
+                          <option value="outings">Outings</option>
+                          <option value="education">Education</option>
+                          <option value="transport">Transport</option>
+                          <option value="work">Work</option>
+                          <option value="food">Food</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mt-4">
+                      <label class="text-gray-700" for="dateInput">Date</label>
+                      <div class="mt-2">
+                        <input class="border border-gray-300 rounded w-full py-2 px-3" type="date" name="" id="dateInput">
+                      </div>
+                    </div>
+                    <div class="mt-6 flex justify-end space-x-4">
+                      <button class="bg-gray-300 text-gray-700 hover:bg-gray-400 rounded px-4 py-2" id="cancelAddOperationButton">
+                        Cancel
+                      </button>
+                      <button class="bg-green-500 text-white hover:bg-green-600 rounded px-4 py-2" id="addOperationButton">
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          
     </main>
 </body>
 
