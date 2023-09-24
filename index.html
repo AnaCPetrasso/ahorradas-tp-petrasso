@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8f1dad4900.js" crossorigin="anonymous"></script>
     <title>Ahorradas Petrasso</title>
 </head>
-<body>
-    
+<body class="h-screen w-screen">
+    <header class="h-16 lg:h-1/5">
+        <nav class="navbar bg-green-500 shadow-lg text-white py-4" role="navigation" aria-label="main navigation">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-center">
+                    <div class="navbar-brand">
+                        <a class="navbar-item">
+                            <h1 class="title text-3xl">
+                                <i class="fas fa-wallet mr-2" aria-hidden="true"></i>
+                                AhorrADAs
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="lg:hidden"> 
+                        <div class="navbar-burger burger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block"> 
+                        <div class="navbar-menu">
+                            <div class="navbar-end">
+                                <a class="navbar-item mx-2" id="navbarItemBalance">
+                                    <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>Balance
+                                </a>
+                                <a class="navbar-item mx-2" id="navbarItemCategories">
+                                    <i class="fas fa-tag mr-2" aria-hidden="true"></i>Categorías
+                                </a>
+                                <a class="navbar-item mx-2" id="navbarItemReports">
+                                    <i class="fas fa-chart-pie mr-2" aria-hidden="true"></i>Reportes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 </body>
 </html>
