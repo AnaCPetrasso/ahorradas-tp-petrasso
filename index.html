@@ -51,122 +51,106 @@
 
     <main>
         <!-- ~~~~~~~~~~~~~~~~~~~~~ REPOR SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        <section class="bg-gray-100 py-10" id="vista-reportes">
+        <section class="bg-gray-100 py-10" id="viewReports">
             <div class="container mx-auto px-4">
                 <div class="lg:flex">
                     <div class="lg:w-8/12 xl:w-10/12 mx-auto">
                         <div class="bg-white rounded-lg shadow-lg p-6">
-                            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Informes</h2>
-                            <div id="sin-reportes" class="hidden">
+                            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Reports</h2>
+                            <div id="noReports" class="hidden">
                                 <div class="my-6 py-6 text-center">
-                                    <img src="imgs/chart.svg" class="mx-auto mb-4 w-32" alt="Sin datos disponibles">
-                                    <h4 class="text-xl font-semibold mt-2">No hay datos disponibles</h4>
-                                    <p>Por favor, agrega más operaciones.</p>
+                                    <img src="imgs/chart.svg" class="mx-auto mb-4 w-32" alt="No data available">
+                                    <h4 class="text-xl font-semibold mt-2">No data available</h4>
+                                    <p>Please add more operations.</p>
                                 </div>
                             </div>
-                            <!-- Resumen -->
-                            <div id="con-reportes">
-                                <section class="mb-6" id="resumen">
-                                    <h4 class="text-xl font-semibold mb-4">Resumen</h4>
-                                    <!-- Categoría con mayor ganancia -->
+                            <!-- Summary -->
+                            <div id="withReports">
+                                <section class="mb-6" id="summary">
+                                    <h4 class="text-xl font-semibold mb-4">Summary</h4>
+                                    <!-- Category with highest income -->
                                     <div class="flex mb-4">
-                                        <div class="w-1/2 font-semibold">Categoría con mayor ganancia</div>
+                                        <div class="w-1/2 font-semibold">Category with highest income</div>
                                         <div class="w-1/4 text-right">
                                             <span class="px-2 py-1 bg-blue-200 text-blue-800 rounded"
-                                                id="categoria-mayor-ganancia">Trabajo</span>
+                                                id="categoryHighestIncome">Work</span>
                                         </div>
                                         <div class="w-1/4 text-right font-semibold text-green-700"
-                                            id="categoria-mayor-ganancia-monto">+$200</div>
+                                            id="categoryHighestIncomeAmount">+$200</div>
                                     </div>
-                                    <!-- Categoría con mayor gasto -->
+                                    <!-- Category with highest expense -->
                                     <div class="flex mb-4">
-                                        <div class="w-1/2 font-semibold">Categoría con mayor gasto</div>
+                                        <div class="w-1/2 font-semibold">Category with highest expense</div>
                                         <div class="w-1/4 text-right">
                                             <span class="px-2 py-1 bg-blue-200 text-blue-800 rounded"
-                                                id="categoria-mayor-gasto">Servicios</span>
+                                                id="categoryHighestExpense">Services</span>
                                         </div>
                                         <div class="w-1/4 text-right font-semibold text-red-700"
-                                            id="categoria-mayor-gasto-monto">-$25</div>
+                                            id="categoryHighestExpenseAmount">-$25</div>
                                     </div>
-                                    <!-- Categoría con mayor balance -->
+                                    <!-- Category with highest balance -->
                                     <div class="flex mb-4">
-                                        <div class="w-1/2 font-semibold">Categoría con mayor balance</div>
+                                        <div class="w-1/2 font-semibold">Category with highest balance</div>
                                         <div class="w-1/4 text-right">
                                             <span class="px-2 py-1 bg-blue-200 text-blue-800 rounded"
-                                                id="categoria-mayor-balance">Trabajo</span>
+                                                id="categoryHighestBalance">Work</span>
                                         </div>
-                                        <div class="w-1/4 text-right font-semibold" id="categoria-mayor-balance-monto">
+                                        <div class="w-1/4 text-right font-semibold" id="categoryHighestBalanceAmount">
                                             $200</div>
                                     </div>
-                                    <!-- Mes con mayor ganancia -->
+                                    <!-- Month with highest income -->
                                     <div class="flex mb-4">
-                                        <div class="w-1/2 font-semibold">Mes con mayor ganancia</div>
-                                        <div class="w-1/4 text-right" id="mes-mayor-ganancia">2023/04/15</div>
+                                        <div class="w-1/2 font-semibold">Month with highest income</div>
+                                        <div class="w-1/4 text-right" id="monthHighestIncome">2023/04/15</div>
                                         <div class="w-1/4 text-right font-semibold text-green-700"
-                                            id="mes-mayor-ganancia-monto">$200</div>
+                                            id="monthHighestIncomeAmount">$200</div>
                                     </div>
-                                    <!-- Mes con mayor gasto -->
+                                    <!-- Month with highest expense -->
                                     <div class="flex">
-                                        <div class="w-1/2 font-semibold">Mes con mayor gasto</div>
-                                        <div class="w-1/4 text-right" id="mes-mayor-gasto">2023/09/24</div>
+                                        <div class="w-1/2 font-semibold">Month with highest expense</div>
+                                        <div class="w-1/4 text-right" id="monthHighestExpense">2023/09/24</div>
                                         <div class="w-1/4 text-right font-semibold text-red-700"
-                                            id="mes-mayor-gasto-monto">-$25</div>
+                                            id="monthHighestExpenseAmount">-$25</div>
                                     </div>
                                 </section>
-                                <!-- Totales por categoría -->
+                                <!-- Totals by category -->
                                 <section class="mb-6">
-                                    <h4 class="text-xl font-semibold mb-4">Totales por categoría</h4>
-                                    <div id="reporte-categorias">
+                                    <h4 class="text-xl font-semibold mb-4">Totals by Category</h4>
+                                    <div id="categoryReports">
                                         <div class="flex mb-2">
-                                            <div class="w-1/4 font-semibold">Categoría</div>
-                                            <div class="w-1/4 text-right font-semibold">Ganancias</div>
-                                            <div class="w-1/4 text-right font-semibold">Gastos</div>
+                                            <div class="w-1/4 font-semibold">Category</div>
+                                            <div class="w-1/4 text-right font-semibold">Income</div>
+                                            <div class="w-1/4 text-right font-semibold">Expenses</div>
                                             <div class="w-1/4 text-right font-semibold">Balance</div>
                                         </div>
-                                        <!-- Ejemplo de datos -->
+                                        <!-- Example data -->
                                         <div class="flex mb-2">
-                                            <div class="w-1/4">Servicios</div>
+                                            <div class="w-1/4">Services</div>
                                             <div class="w-1/4 text-green-700 text-right">+$25</div>
                                             <div class="w-1/4 text-red-700 text-right">-$25</div>
                                             <div class="w-1/4 text-right">$0</div>
                                         </div>
-                                        <div class="flex mb-2">
-                                            <div class="w-1/4">Trabajo</div>
-                                            <div class="w-1/4 text-green-700 text-right">+$200</div>
-                                            <div class="w-1/4 text-red-700 text-right">-$0</div>
-                                            <div class="w-1/4 text-right">$200</div>
-                                        </div>
+
                                     </div>
                                 </section>
-                                <!-- Totales por mes -->
+                                <!-- Totals by month -->
                                 <section>
-                                    <h3 class="text-xl font-semibold mb-4">Totales por mes</h3>
-                                    <div id="reporte-mes">
+                                    <h3 class="text-xl font-semibold mb-4">Totals by Month</h3>
+                                    <div id="monthReports">
                                         <div class="flex mb-2">
-                                            <div class="w-1/4 font-semibold">Mes</div>
-                                            <div class="w-1/4 text-right font-semibold">Ganancias</div>
-                                            <div class="w-1/4 text-right font-semibold">Gastos</div>
+                                            <div class="w-1/4 font-semibold">Month</div>
+                                            <div class="w-1/4 text-right font-semibold">Income</div>
+                                            <div class="w-1/4 text-right font-semibold">Expenses</div>
                                             <div class="w-1/4 text-right font-semibold">Balance</div>
                                         </div>
-                                        <!-- Ejemplo de datos -->
+                                        <!-- Example data -->
                                         <div class="flex mb-2">
                                             <div class="w-1/4">2/2023</div>
                                             <div class="w-1/4 text-green-700 text-right">+$25</div>
                                             <div class="w-1/4 text-red-700 text-right">-$0</div>
                                             <div class="w-1/4 text-right">$25</div>
                                         </div>
-                                        <div class="flex mb-2">
-                                            <div class="w-1/4">4/2023</div>
-                                            <div class="w-1/4 text-green-700 text-right">+$200</div>
-                                            <div class="w-1/4 text-red-700 text-right">-$0</div>
-                                            <div class="w-1/4 text-right">$200</div>
-                                        </div>
-                                        <div class="flex mb-2">
-                                            <div class="w-1/4">9/2023</div>
-                                            <div class="w-1/4 text-green-700 text-right">+$0</div>
-                                            <div class="w-1/4 text-red-700 text-right">-$25</div>
-                                            <div class="w-1/4 text-right">-$25</div>
-                                        </div>
+
                                     </div>
                                 </section>
                             </div>
@@ -175,7 +159,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 </body>
 
