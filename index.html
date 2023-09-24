@@ -12,40 +12,40 @@
 <body class="h-screen w-screen">
     <header class="h-16 lg:h-1/5" id="headerSection">
         <nav class="navbar bg-green-500 shadow-lg text-white py-4" role="navigation" aria-label="main navigation">
-          <div class="container mx-auto">
-            <div class="flex justify-between items-center">
-              <div class="navbarBrand">
-                <a class="navbar-item">
-                  <h1 class="title text-3xl">
-                    <i class="fas fa-wallet mr-2" aria-hidden="true"></i>
-                    AhorrADAs
-                  </h1>
-                </a>
-              </div>
-              <div class="lg:hidden">
-                <div class="navbarBurger burger">
-                  <span></span>
-                  <span></span>
-                  <span></span>
+            <div class="container mx-auto">
+                <div class="flex justify-between items-center">
+                    <div class="navbarBrand">
+                        <a class="navbar-item">
+                            <h1 class="title text-3xl">
+                                <i class="fas fa-wallet mr-2" aria-hidden="true"></i>
+                                AhorrADAs
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="lg:hidden">
+                        <div class="navbarBurger burger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="hidden lg:flex">
+                        <div class="navbarMenu">
+                            <div class="navbarEnd">
+                                <a class="navbarItem mx-2" id="navbarItemBalance">
+                                    <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>Balance
+                                </a>
+                                <a class="navbarItem mx-2" id="navbarItemCategories">
+                                    <i class="fas fa-tag mr-2" aria-hidden="true"></i>Categories
+                                </a>
+                                <a class="navbarItem mx-2" id="navbarItemReports">
+                                    <i class="fas fa-chart-pie mr-2" aria-hidden="true"></i>Reports
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="hidden lg:flex">
-                <div class="navbarMenu">
-                  <div class="navbarEnd">
-                    <a class="navbarItem mx-2" id="navbarItemBalance">
-                      <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>Balance
-                    </a>
-                    <a class="navbarItem mx-2" id="navbarItemCategories">
-                      <i class="fas fa-tag mr-2" aria-hidden="true"></i>Categories
-                    </a>
-                    <a class="navbarItem mx-2" id="navbarItemReports">
-                      <i class="fas fa-chart-pie mr-2" aria-hidden="true"></i>Reports
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </nav>
     </header>
     <main>
@@ -89,7 +89,8 @@
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="filterCategory" class="block text-gray-700 font-semibold">Category</label>
+                                    <label for="filterCategory"
+                                        class="block text-gray-700 font-semibold">Category</label>
                                     <div class="relative">
                                         <select id="filterCategory"
                                             class="block w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-400">
@@ -159,7 +160,7 @@
                 </div>
             </div>
         </section>
-                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  CATEGORIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  CATEGORIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
         <section class="section mt-5 categoryView" id="categoryView">
             <div class="container mx-auto px-4">
                 <div class="lg:w-3/5 md:w-4/5 sm:w-full mx-auto">
@@ -307,156 +308,171 @@
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NEW OPERATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <section class="bg-gray-100 py-10" id="operationView">
             <div class="container mx-auto px-4">
-              <div class="lg:flex justify-center">
-                <div class="lg:w-8/12 xl:w-10/12">
-                  <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h2 class="text-3xl font-semibold text-gray-800 mb-6">New Operation</h2>
-                    <div class="mt-6">
-                      <label class="text-gray-700" for="descriptionInput">Description</label>
-                      <div class="mt-2">
-                        <input class="border border-gray-300 rounded w-full py-2 px-3" type="text" name="" id="descriptionInput" placeholder="Enter description">
-                      </div>
+                <div class="lg:flex justify-center">
+                    <div class="lg:w-8/12 xl:w-10/12">
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h2 class="text-3xl font-semibold text-gray-800 mb-6">New Operation</h2>
+                            <div class="mt-6">
+                                <label class="text-gray-700" for="descriptionInput">Description</label>
+                                <div class="mt-2">
+                                    <input class="border border-gray-300 rounded w-full py-2 px-3" type="text" name=""
+                                        id="descriptionInput" placeholder="Enter description">
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <label class="text-gray-700" for="amountInput">Amount</label>
+                                <div class="mt-2">
+                                    <input class="border border-gray-300 rounded w-full py-2 px-3" type="number" name=""
+                                        id="amountInput" placeholder="Enter amount" value="0">
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <label class="text-gray-700" for="operationType">Type</label>
+                                <div class="mt-2">
+                                    <select class="border border-gray-300 rounded w-full py-2 px-3" id="operationType">
+                                        <option value="EXPENSE">Expense</option>
+                                        <option value="INCOME">Income</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <label class="text-gray-700" for="categorySelect">Category</label>
+                                <div class="mt-2">
+                                    <select class="border border-gray-300 rounded w-full py-2 px-3" id="categorySelect">
+                                        <option value="services">Services</option>
+                                        <option value="outings">Outings</option>
+                                        <option value="education">Education</option>
+                                        <option value="transport">Transport</option>
+                                        <option value="work">Work</option>
+                                        <option value="food">Food</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <label class="text-gray-700" for="dateInput">Date</label>
+                                <div class="mt-2">
+                                    <input class="border border-gray-300 rounded w-full py-2 px-3" type="date" name=""
+                                        id="dateInput">
+                                </div>
+                            </div>
+                            <div class="mt-6 flex justify-end space-x-4">
+                                <button class="bg-gray-300 text-gray-700 hover:bg-gray-400 rounded px-4 py-2"
+                                    id="cancelAddOperationButton">
+                                    Cancel
+                                </button>
+                                <button class="bg-green-500 text-white hover:bg-green-600 rounded px-4 py-2"
+                                    id="addOperationButton">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mt-4">
-                      <label class="text-gray-700" for="amountInput">Amount</label>
-                      <div class="mt-2">
-                        <input class="border border-gray-300 rounded w-full py-2 px-3" type="number" name="" id="amountInput" placeholder="Enter amount" value="0">
-                      </div>
-                    </div>
-                    <div class="mt-4">
-                      <label class="text-gray-700" for="operationType">Type</label>
-                      <div class="mt-2">
-                        <select class="border border-gray-300 rounded w-full py-2 px-3" id="operationType">
-                          <option value="EXPENSE">Expense</option>
-                          <option value="INCOME">Income</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="mt-4">
-                      <label class="text-gray-700" for="categorySelect">Category</label>
-                      <div class="mt-2">
-                        <select class="border border-gray-300 rounded w-full py-2 px-3" id="categorySelect">
-                          <option value="services">Services</option>
-                          <option value="outings">Outings</option>
-                          <option value="education">Education</option>
-                          <option value="transport">Transport</option>
-                          <option value="work">Work</option>
-                          <option value="food">Food</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="mt-4">
-                      <label class="text-gray-700" for="dateInput">Date</label>
-                      <div class="mt-2">
-                        <input class="border border-gray-300 rounded w-full py-2 px-3" type="date" name="" id="dateInput">
-                      </div>
-                    </div>
-                    <div class="mt-6 flex justify-end space-x-4">
-                      <button class="bg-gray-300 text-gray-700 hover:bg-gray-400 rounded px-4 py-2" id="cancelAddOperationButton">
-                        Cancel
-                      </button>
-                      <button class="bg-green-500 text-white hover:bg-green-600 rounded px-4 py-2" id="addOperationButton">
-                        Add
-                      </button>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
         </section>
-          
-          
+
+
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~ EDIT OPERATIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <section>
             <section class="bg-gray-100 py-10" id="editTransactionView">
                 <div class="container mx-auto px-4">
-                  <div class="lg:flex justify-center">
-                    <div class="lg:w-8/12 xl:w-10/12">
-                      <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h2 class="text-3xl font-semibold text-gray-800 mb-6">Edit Operation</h2>
-                        <div class="mt-6">
-                          <label class="text-gray-700" for="editDescriptionInput">Description</label>
-                          <div class="mt-2">
-                            <input class="border border-gray-300 rounded w-full py-2 px-3" type="text" name="" id="editDescriptionInput">
-                          </div>
+                    <div class="lg:flex justify-center">
+                        <div class="lg:w-8/12 xl:w-10/12">
+                            <div class="bg-white rounded-lg shadow-lg p-6">
+                                <h2 class="text-3xl font-semibold text-gray-800 mb-6">Edit Operation</h2>
+                                <div class="mt-6">
+                                    <label class="text-gray-700" for="editDescriptionInput">Description</label>
+                                    <div class="mt-2">
+                                        <input class="border border-gray-300 rounded w-full py-2 px-3" type="text"
+                                            name="" id="editDescriptionInput">
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <label class="text-gray-700" for="editAmountInput">Amount</label>
+                                    <div class="mt-2">
+                                        <input class="border border-gray-300 rounded w-full py-2 px-3" type="number"
+                                            name="" id="editAmountInput">
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <label class="text-gray-700" for="editTransactionType">Type</label>
+                                    <div class="mt-2">
+                                        <select class="border border-gray-300 rounded w-full py-2 px-3"
+                                            id="editTransactionType">
+                                            <option value="EXPENSE">Expense</option>
+                                            <option value="INCOME">Income</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <label class="text-gray-700" for="editCategorySelect">Category</label>
+                                    <div class="mt-2">
+                                        <select class="border border-gray-300 rounded w-full py-2 px-3"
+                                            id="editCategorySelect">
+                                            <option value="baa6390f-573e-4ffd-87d7-17a69431e05b">Services</option>
+                                            <option value="1e724394-a909-4ecb-b2a3-0578937f8600">Outings</option>
+                                            <option value="ab80cdf1-a384-45ab-8c31-bf8ab5d61314">Education</option>
+                                            <option value="18bc9486-9d2f-437a-8bea-ecfa7ba5de86">Transport</option>
+                                            <option value="fd602d32-37fa-4d6a-a052-27ba78dad1e6">Work</option>
+                                            <option value="dfbc168f-3cb5-464f-9995-a3b6b6ebb369">Food</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <label class="text-gray-700" for="editDateInput">Date</label>
+                                    <div class="mt-2">
+                                        <input class="border border-gray-300 rounded w-full py-2 px-3" type="date"
+                                            name="" id="editDateInput">
+                                    </div>
+                                </div>
+                                <div class="flex justify-end mt-6 space-x-4">
+                                    <button class="bg-gray-300 text-gray-700 hover:bg-gray-400 rounded px-4 py-2"
+                                        id="cancelEditTransactionButton">
+                                        Cancel
+                                    </button>
+                                    <button class="bg-green-500 text-white hover:bg-green-600 rounded px-4 py-2"
+                                        id="editTransactionButton">
+                                        Edit
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mt-4">
-                          <label class="text-gray-700" for="editAmountInput">Amount</label>
-                          <div class="mt-2">
-                            <input class="border border-gray-300 rounded w-full py-2 px-3" type="number" name="" id="editAmountInput">
-                          </div>
-                        </div>
-                        <div class="mt-4">
-                          <label class="text-gray-700" for="editTransactionType">Type</label>
-                          <div class="mt-2">
-                            <select class="border border-gray-300 rounded w-full py-2 px-3" id="editTransactionType">
-                              <option value="EXPENSE">Expense</option>
-                              <option value="INCOME">Income</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="mt-4">
-                          <label class="text-gray-700" for="editCategorySelect">Category</label>
-                          <div class="mt-2">
-                            <select class="border border-gray-300 rounded w-full py-2 px-3" id="editCategorySelect">
-                              <option value="baa6390f-573e-4ffd-87d7-17a69431e05b">Services</option>
-                              <option value="1e724394-a909-4ecb-b2a3-0578937f8600">Outings</option>
-                              <option value="ab80cdf1-a384-45ab-8c31-bf8ab5d61314">Education</option>
-                              <option value="18bc9486-9d2f-437a-8bea-ecfa7ba5de86">Transport</option>
-                              <option value="fd602d32-37fa-4d6a-a052-27ba78dad1e6">Work</option>
-                              <option value="dfbc168f-3cb5-464f-9995-a3b6b6ebb369">Food</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="mt-4">
-                          <label class="text-gray-700" for="editDateInput">Date</label>
-                          <div class="mt-2">
-                            <input class="border border-gray-300 rounded w-full py-2 px-3" type="date" name="" id="editDateInput">
-                          </div>
-                        </div>
-                        <div class="flex justify-end mt-6 space-x-4">
-                          <button class="bg-gray-300 text-gray-700 hover:bg-gray-400 rounded px-4 py-2" id="cancelEditTransactionButton">
-                            Cancel
-                          </button>
-                          <button class="bg-green-500 text-white hover:bg-green-600 rounded px-4 py-2" id="editTransactionButton">
-                            Edit
-                          </button>
-                        </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-              </section>
-              
+            </section>
+
         </section>
     </main>
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ EDIT CATEGORY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
     <section class="bg-gray-200 py-10" id="editCategoryView">
         <div class="container mx-auto px-4">
-          <div class="lg:flex justify-center">
-            <div class="lg:w-8/12 xl:w-10/12">
-              <div class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-3xl font-semibold text-gray-800 mb-6">Edit Category</h2>
-                <div class="mt-6">
-                  <label class="text-gray-700" for="editCategoryNameInput">Name</label>
-                  <div class="mt-2">
-                    <input class="border border-gray-300 rounded w-full py-2 px-3" type="text" name="" id="editCategoryNameInput">
-                  </div>
+            <div class="lg:flex justify-center">
+                <div class="lg:w-8/12 xl:w-10/12">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h2 class="text-3xl font-semibold text-gray-800 mb-6">Edit Category</h2>
+                        <div class="mt-6">
+                            <label class="text-gray-700" for="editCategoryNameInput">Name</label>
+                            <div class="mt-2">
+                                <input class="border border-gray-300 rounded w-full py-2 px-3" type="text" name=""
+                                    id="editCategoryNameInput">
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-6 space-x-4">
+                            <button class="bg-gray-300 text-gray-700 hover:bg-gray-400 rounded px-4 py-2"
+                                id="cancelEditCategoryButton">
+                                Cancel
+                            </button>
+                            <button class="bg-green-500 text-white hover:bg-green-600 rounded px-4 py-2"
+                                id="editCategoryButton">
+                                Edit
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex justify-end mt-6 space-x-4">
-                  <button class="bg-gray-300 text-gray-700 hover:bg-gray-400 rounded px-4 py-2" id="cancelEditCategoryButton">
-                    Cancel
-                  </button>
-                  <button class="bg-green-500 text-white hover:bg-green-600 rounded px-4 py-2" id="editCategoryButton">
-                    Edit
-                  </button>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </section>
-      
+    </section>
+
 </body>
 
 </html>
