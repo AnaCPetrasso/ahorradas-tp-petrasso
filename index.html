@@ -51,113 +51,122 @@
 
     <main>
         <!-- ~~~~~~~~~~~~~~~~~~~~~ REPOR SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        <section class="section mt-5 vista" id="vista-reports">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-8-widescreen is-10-desktop is-offset-2-widescreen is-offset-1-desktop">
-                        <div class="box">
-                            <h2 class="title is-2 font-bold pb-2">
-                                Reportes
-                            </h2>
-                            <div id="sin-reports" class="hidden">
-                                <div class="my-6 py-6">
-                                    <figure class="image">
-                                        <img src="imgs/chart.svg" class="" alt="">
-                                    </figure>
-                                    <h4 class="text-2xl has-text-centered mt-6 mb-4 font-semibold">
-                                        Operaciones insuficientes
-                                    </h4>
-                                    <p class="has-text-centered">
-                                        Prueba agregando más operaciones
-                                    </p>
+        <section class="bg-gray-100 py-10" id="vista-reportes">
+            <div class="container mx-auto px-4">
+                <div class="lg:flex">
+                    <div class="lg:w-8/12 xl:w-10/12 mx-auto">
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Informes</h2>
+                            <div id="sin-reportes" class="hidden">
+                                <div class="my-6 py-6 text-center">
+                                    <img src="imgs/chart.svg" class="mx-auto mb-4 w-32" alt="Sin datos disponibles">
+                                    <h4 class="text-xl font-semibold mt-2">No hay datos disponibles</h4>
+                                    <p>Por favor, agrega más operaciones.</p>
                                 </div>
                             </div>
                             <!-- Resumen -->
-                            <div id="con-reports" class="">
-                                <section class="section mb-5" id="resumen">
-                                    <h4 class="title is-4 mb-5 pb-4">Resumen</h4>
+                            <div id="con-reportes">
+                                <section class="mb-6" id="resumen">
+                                    <h4 class="text-xl font-semibold mb-4">Resumen</h4>
                                     <!-- Categoría con mayor ganancia -->
-                                    <div class="grid grid-cols-12">
-                                        <div class="col-span-6 font-semibold">
-                                            Categoría con mayor ganancia
+                                    <div class="flex mb-4">
+                                        <div class="w-1/2 font-semibold">Categoría con mayor ganancia</div>
+                                        <div class="w-1/4 text-right">
+                                            <span class="px-2 py-1 bg-blue-200 text-blue-800 rounded"
+                                                id="categoria-mayor-ganancia">Trabajo</span>
                                         </div>
-                                        <div class="col-span-3 text-right">
-                                            <span class="bg-primary text-white py-1 px-2 rounded-lg"
-                                                id="bigProfitCategory">Trabajo</span>
-                                        </div>
-                                        <div class="col-span-3 font-semibold text-right text-success"
-                                            id="bigProfitTotal">+$200</div>
+                                        <div class="w-1/4 text-right font-semibold text-green-700"
+                                            id="categoria-mayor-ganancia-monto">+$200</div>
                                     </div>
                                     <!-- Categoría con mayor gasto -->
-                                    <div class="grid grid-cols-12 mt-2">
-                                        <div class="col-span-6 font-semibold">
-                                            Categoría con mayor gasto
+                                    <div class="flex mb-4">
+                                        <div class="w-1/2 font-semibold">Categoría con mayor gasto</div>
+                                        <div class="w-1/4 text-right">
+                                            <span class="px-2 py-1 bg-blue-200 text-blue-800 rounded"
+                                                id="categoria-mayor-gasto">Servicios</span>
                                         </div>
-                                        <div class="col-span-3 text-right">
-                                            <span class="bg-primary text-white py-1 px-2 rounded-lg"
-                                                id="bigSpentCategory">Servicios</span>
-                                        </div>
-                                        <div class="col-span-3 font-semibold text-right text-danger" id="bigSpentTotal">
-                                            -$25</div>
+                                        <div class="w-1/4 text-right font-semibold text-red-700"
+                                            id="categoria-mayor-gasto-monto">-$25</div>
                                     </div>
                                     <!-- Categoría con mayor balance -->
-                                    <div class="grid grid-cols-12 mt-2">
-                                        <div class="col-span-6 font-semibold">
-                                            Categoría con mayor balance
+                                    <div class="flex mb-4">
+                                        <div class="w-1/2 font-semibold">Categoría con mayor balance</div>
+                                        <div class="w-1/4 text-right">
+                                            <span class="px-2 py-1 bg-blue-200 text-blue-800 rounded"
+                                                id="categoria-mayor-balance">Trabajo</span>
                                         </div>
-                                        <div class="col-span-3 text-right">
-                                            <span class="bg-primary text-white py-1 px-2 rounded-lg"
-                                                id="bigBalanceCategory">Trabajo</span>
-                                        </div>
-                                        <div class="col-span-3 font-semibold text-right" id="bigBalanceTotal">$200</div>
+                                        <div class="w-1/4 text-right font-semibold" id="categoria-mayor-balance-monto">
+                                            $200</div>
                                     </div>
                                     <!-- Mes con mayor ganancia -->
-                                    <div class="grid grid-cols-12 mt-2">
-                                        <div class="col-span-6 font-semibold">
-                                            Mes con mayor ganancia
-                                        </div>
-                                        <div class="col-span-3 text-right" id="bigProfitMonth">2023/04/15</div>
-                                        <div class="col-span-3 font-semibold text-right text-success"
-                                            id="bigProfitMonthTotal">$200</div>
+                                    <div class="flex mb-4">
+                                        <div class="w-1/2 font-semibold">Mes con mayor ganancia</div>
+                                        <div class="w-1/4 text-right" id="mes-mayor-ganancia">2023/04/15</div>
+                                        <div class="w-1/4 text-right font-semibold text-green-700"
+                                            id="mes-mayor-ganancia-monto">$200</div>
                                     </div>
                                     <!-- Mes con mayor gasto -->
-                                    <div class="grid grid-cols-12 mt-2">
-                                        <div class="col-span-6 font-semibold">
-                                            Mes con mayor gasto
-                                        </div>
-                                        <div class="col-span-3 text-right" id="bigSpentMonth">2023/09/24</div>
-                                        <div class="col-span-3 font-semibold text-right text-danger"
-                                            id="bigSpentMonthTotal">-$25</div>
+                                    <div class="flex">
+                                        <div class="w-1/2 font-semibold">Mes con mayor gasto</div>
+                                        <div class="w-1/4 text-right" id="mes-mayor-gasto">2023/09/24</div>
+                                        <div class="w-1/4 text-right font-semibold text-red-700"
+                                            id="mes-mayor-gasto-monto">-$25</div>
                                     </div>
                                 </section>
                                 <!-- Totales por categoría -->
-                                <section class="section mb-5">
-                                    <h4 class="title is-4 mb-5 pb-4">
-                                        Totales por categorías
-                                    </h4>
+                                <section class="mb-6">
+                                    <h4 class="text-xl font-semibold mb-4">Totales por categoría</h4>
                                     <div id="reporte-categorias">
-                                        <div class="grid grid-cols-12">
-                                            <div class="col-span-6 font-semibold">
-                                                Categoría
-                                            </div>
-                                            <div class="col-span-3 font-semibold text-right">Ganancias</div>
-                                            <div class="col-span-3 font-semibold text-right">Gastos</div>
+                                        <div class="flex mb-2">
+                                            <div class="w-1/4 font-semibold">Categoría</div>
+                                            <div class="w-1/4 text-right font-semibold">Ganancias</div>
+                                            <div class="w-1/4 text-right font-semibold">Gastos</div>
+                                            <div class="w-1/4 text-right font-semibold">Balance</div>
                                         </div>
-                                        <!-- Category data added dynamically with JavaScript -->
+                                        <!-- Ejemplo de datos -->
+                                        <div class="flex mb-2">
+                                            <div class="w-1/4">Servicios</div>
+                                            <div class="w-1/4 text-green-700 text-right">+$25</div>
+                                            <div class="w-1/4 text-red-700 text-right">-$25</div>
+                                            <div class="w-1/4 text-right">$0</div>
+                                        </div>
+                                        <div class="flex mb-2">
+                                            <div class="w-1/4">Trabajo</div>
+                                            <div class="w-1/4 text-green-700 text-right">+$200</div>
+                                            <div class="w-1/4 text-red-700 text-right">-$0</div>
+                                            <div class="w-1/4 text-right">$200</div>
+                                        </div>
                                     </div>
                                 </section>
                                 <!-- Totales por mes -->
-                                <section class="section">
-                                    <h3 class="title is-4 mb-5 pb-4">Totales por mes</h3>
+                                <section>
+                                    <h3 class="text-xl font-semibold mb-4">Totales por mes</h3>
                                     <div id="reporte-mes">
-                                        <div class="grid grid-cols-12">
-                                            <div class="col-span-6 font-semibold">
-                                                Mes
-                                            </div>
-                                            <div class="col-span-3 font-semibold text-right">Ganancias</div>
-                                            <div class="col-span-3 font-semibold text-right">Gastos</div>
+                                        <div class="flex mb-2">
+                                            <div class="w-1/4 font-semibold">Mes</div>
+                                            <div class="w-1/4 text-right font-semibold">Ganancias</div>
+                                            <div class="w-1/4 text-right font-semibold">Gastos</div>
+                                            <div class="w-1/4 text-right font-semibold">Balance</div>
                                         </div>
-                                        <!-- Month data added dynamically with JavaScript -->
+                                        <!-- Ejemplo de datos -->
+                                        <div class="flex mb-2">
+                                            <div class="w-1/4">2/2023</div>
+                                            <div class="w-1/4 text-green-700 text-right">+$25</div>
+                                            <div class="w-1/4 text-red-700 text-right">-$0</div>
+                                            <div class="w-1/4 text-right">$25</div>
+                                        </div>
+                                        <div class="flex mb-2">
+                                            <div class="w-1/4">4/2023</div>
+                                            <div class="w-1/4 text-green-700 text-right">+$200</div>
+                                            <div class="w-1/4 text-red-700 text-right">-$0</div>
+                                            <div class="w-1/4 text-right">$200</div>
+                                        </div>
+                                        <div class="flex mb-2">
+                                            <div class="w-1/4">9/2023</div>
+                                            <div class="w-1/4 text-green-700 text-right">+$0</div>
+                                            <div class="w-1/4 text-red-700 text-right">-$25</div>
+                                            <div class="w-1/4 text-right">-$25</div>
+                                        </div>
                                     </div>
                                 </section>
                             </div>
@@ -166,8 +175,6 @@
                 </div>
             </div>
         </section>
-
-
 
     </main>
 </body>
