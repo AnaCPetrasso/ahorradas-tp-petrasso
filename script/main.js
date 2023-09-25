@@ -1,7 +1,7 @@
 const $ = (selector) => document.querySelector(selector)
 const $$ = (selector) => document.querySelectorAll(selector)
 
-// Obtén todos los elementos del menú de navegación
+// Obtener todos los elementos del menú de navegación
 const navItems = $$('.navbarItem');
 
 // Agrega un event listener a cada elemento del menú
@@ -25,4 +25,25 @@ navItems.forEach((navItem) => {
       targetSection.classList.remove('hidden');
     }
   });
+});
+
+// Obtener el botón "New Operation"
+const newOperationButton = $('#newOperation');
+
+// Agrega un event listener al botón
+newOperationButton.addEventListener('click', (event) => {
+  // Evita que se realice la acción predeterminada del botón
+  event.preventDefault();
+
+  // Oculta todas las secciones
+  const sections = $$('.section');
+  sections.forEach((section) => {
+    section.classList.add('hidden');
+  });
+
+  // Muestra la sección "New Operation"
+  const newOperationSection = $('#operationView');
+  if (newOperationSection) {
+    newOperationSection.classList.remove('hidden');
+  }
 });
