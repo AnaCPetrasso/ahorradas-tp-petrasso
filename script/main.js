@@ -64,4 +64,24 @@ cancelButton.addEventListener('click', () => {
   // Mostrar la sección "balanceView"
   balanceViewSection.classList.remove('hidden');
 });
+// Obtener una referencia al botón "toggleFilters" por su ID
+const toggleFiltersButton = $('#toggleFilters');
+
+// Obtener una referencia a los filtros por su ID
+const filters = $('#filters');
+
+// Agrega un event listener al botón "toggleFilters"
+toggleFiltersButton.addEventListener('click', (event) => {
+  // Evita que se realice la acción predeterminada del enlace
+  event.preventDefault();
+
+  // Cambia la visibilidad de los filtros
+  if (filters.style.display === 'block') {
+    filters.style.display = 'none';
+    toggleFiltersButton.textContent = 'Show filters'; // Cambia el texto del botón
+  } else {
+    filters.style.display = 'block';
+    toggleFiltersButton.textContent = 'Hide filters'; // Cambia el texto del botón
+  }
+});
 
