@@ -83,3 +83,74 @@ toggleFiltersButton.addEventListener('click', (event) => {
   toggleFilters();
 });
 
+
+// Get a reference to the "Add Operation" button
+const addOperationButton = $('#addOperationButton');
+
+// Add a click event to the "Add Operation" button
+addOperationButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  // Get values from the form fields
+  const description = $('#descriptionInput').value;
+  const amount = parseFloat($('#amountInput').value); // Convert the value to a number
+  const operationType = $('#operationType').value;
+  const category = $('#categorySelect').value;
+  const date = $('#dateInput').value;
+
+  // Get a reference to the operations table
+  const operationsTable = $('#operationsTable');
+
+  // Create a new row in the table
+  const newRow = document.createElement('tr');
+
+  // Apply red color style if it's an expense operation
+  const amountCell = document.createElement('td');
+  if (operationType === 'EXPENSE') {
+    amountCell.textContent = `-$${Math.abs(amount)}`; // Add a minus sign and use absolute value
+    amountCell.classList.add('text-red-600'); // Apply red color style
+  } else {
+    amountCell.textContent = `+$${amount}`;
+    amountCell.classList.add('text-green-600'); // Apply green color style for income
+  }
+
+  // Add cells with field values
+  newRow.innerHTML = `
+    <td>${description}</td>
+    <td>${category}</td>
+    <td>${date}</td>
+  `;
+
+  // Add the amount cell to the row
+  newRow.appendChild(amountCell);
+
+  // Add actions cell (buttons) to the row
+  const actionsCell = document.createElement('td');
+  actionsCell.innerHTML = `
+    <button class="edit-button">Edit</button>
+    <button class="delete-button">Delete</button>
+  `;
+  newRow.appendChild(actionsCell);
+
+  // Add the new row to the table
+  operationsTable.appendChild(newRow);
+
+  // Hide the "No results" message (id="noOperations")
+  const noOperations = $('#noOperations');
+  noOperations.classList.add('hidden');
+
+  // Show the operations table (id="withOperations")
+  const withOperations = $('#withOperations');
+  withOperations.classList.remove('hidden');
+
+  // Reset the form fields
+  $('#descriptionInput').value = '';
+  $('#amountInput').value = '0';
+  $('#operationType').value = 'EXPENSE';
+  $('#categorySelect').value = 'services';
+  $('#dateInput').value = '';
+
+  // Switch to the "Balance" section
+  hideAllSections(); // Hide all sections
+  showSection('balanceView'); // Show the "Balance" section
+});
