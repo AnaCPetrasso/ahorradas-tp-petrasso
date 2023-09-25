@@ -83,7 +83,6 @@ toggleFiltersButton.addEventListener('click', (event) => {
   toggleFilters();
 });
 
-
 // Get a reference to the "Add Operation" button
 const addOperationButton = $('#addOperationButton');
 
@@ -154,6 +153,7 @@ addOperationButton.addEventListener('click', (event) => {
   hideAllSections(); // Hide all sections
   showSection('balanceView'); // Show the "Balance" section
 });
+
 // Get a reference to the "Add Category" button
 const addCategoryButton = $('#addCategoryButton');
 
@@ -164,30 +164,34 @@ addCategoryButton.addEventListener('click', (event) => {
   // Get the category name from the input field
   const categoryName = $('#categoryInput').value;
 
-  // Get a reference to the "Categories" container
-  const categoriesContainer = $('#categories');
+  // Check if the category name is not empty
+  if (categoryName.trim() !== '') {
+    // Get a reference to the "Categories" container
+    const categoriesContainer = $('#categories');
 
-  // Create a new category row
-  const newCategoryRow = document.createElement('div');
-  newCategoryRow.classList.add('mb-3');
+    // Create a new category row
+    const newCategoryRow = document.createElement('div');
+    newCategoryRow.classList.add('mb-3');
 
-  // Add the HTML content for the category row
-  newCategoryRow.innerHTML = `
-    <div class="flex justify-between items-center">
-      <span class="tag is-primary is-light">${categoryName}</span>
-      <div class="flex items-center space-x-2">
-        <a href="#" class="mr-4 is-size-7 edit-link">Edit</a>
-        <a href="#" class="is-size-7 delete-link">Delete</a>
+    // Add the HTML content for the category row
+    newCategoryRow.innerHTML = `
+      <div class="flex justify-between items-center">
+        <span class="tag is-primary is-light">${categoryName}</span>
+        <div class="flex items-center space-x-2">
+          <a href="#" class="mr-4 is-size-7 edit-link">Edit</a>
+          <a href="#" class="is-size-7 delete-link">Delete</a>
+        </div>
       </div>
-    </div>
-  `;
+    `;
 
-  // Append the new category row to the "Categories" container
-  categoriesContainer.appendChild(newCategoryRow);
+    // Append the new category row to the "Categories" container
+    categoriesContainer.appendChild(newCategoryRow);
 
-  // Clear the input field
-  $('#categoryInput').value = '';
+    // Clear the input field
+    $('#categoryInput').value = '';
+  }
 });
+
 // Get a reference to the "Categories" container
 const categoriesContainer = $('#categories');
 
@@ -210,31 +214,58 @@ categoriesContainer.addEventListener('click', (event) => {
   }
 });
 
-// Add a click event to the "Add Category" button
-addCategoryButton.addEventListener('click', (event) => {
+// Add a click event to the "Edit Category" button in the edit category view
+const editCategoryButton = $('#editCategoryButton');
+
+editCategoryButton.addEventListener('click', (event) => {
   event.preventDefault();
 
-  // Get the category name from the input field
-  const categoryName = $('#categoryInput').value;
+  // Get the edited category name from the input field
+  const editedCategoryName = $('#editCategoryNameInput').value;
 
-  // Create a new category row
-  const newCategoryRow = document.createElement('div');
-  newCategoryRow.classList.add('mb-3');
+  // Get the currently selected category row
+  const selectedCategoryRow = $('.selected-category');
 
-  // Add the HTML content for the category row
-  newCategoryRow.innerHTML = `
-    <div class="flex justify-between items-center">
-      <span class="tag is-primary is-light">${categoryName}</span>
-      <div class="flex items-center space-x-2">
-        <a href="#" class="mr-4 is-size-7 edit-link">Edit</a>
-        <a href="#" class="is-size-7 delete-link">Delete</a>
-      </div>
-    </div>
-  `;
+  // Update the category name in the selected category row
+  const categoryNameSpan = selectedCategoryRow.querySelector('.tag.is-primary.is-light');
+  categoryNameSpan.textContent = editedCategoryName;
 
-  // Append the new category row to the "Categories" container
-  categoriesContainer.appendChild(newCategoryRow);
+  // Switch back to the "Categories" view
+  hideAllSections();
+  showSection('categoriesView');
+});
 
-  // Clear the input field
-  $('#categoryInput').value = '';
+// Add a click event to the "Cancel" button in the edit category view
+const cancelEditCategoryButton = $('#cancelEditCategoryButton');
+
+cancelEditCategoryButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  // Switch back to the "Categories" view without making any changes
+  hideAllSections();
+  showSection('categoriesView');
+});
+
+// Add a click event to the "Edit" button in a category row
+categoriesContainer.addEventListener('click', (event) => {
+  const editLink = event.target.closest('.edit-link');
+
+  if (editLink) {
+    event.preventDefault();
+
+    // Get the category name from the selected category row
+    const selectedCategoryRow = editLink.closest('.mb-3');
+    const categoryNameSpan = selectedCategoryRow.querySelector('.tag.is-primary.is-light');
+    const categoryName = categoryNameSpan.textContent;
+
+    // Populate the edit category input field with the current category name
+    $('#editCategoryNameInput').value = categoryName;
+
+    // Mark the selected category row for reference
+    selectedCategoryRow.classList.add('selected-category');
+
+    // No ocultes la vista "editCategoryView", simplemente asegúrate de que no se oculte
+    // hideAllSections();
+    // showSection('editCategoryView');
+  }
 });
