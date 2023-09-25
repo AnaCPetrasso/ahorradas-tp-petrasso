@@ -166,15 +166,22 @@ addCategoryButton.addEventListener('click', (event) => {
 
   // Check if the category name is not empty
   if (categoryName.trim() !== '') {
-    // Get a reference to the "Categories" container
-    const categoriesContainer = $('#categories');
+    // Add the category as a new option on categorySelect
+    const categorySelect = $('#categorySelect');
+    const newOption = document.createElement('option');
+    newOption.text = categoryName;
+    categorySelect.add(newOption);
 
-    // Create a new category row
-    const newCategoryRow = document.createElement('div');
-    newCategoryRow.classList.add('mb-3');
+    // Restore the input value
+    $('#categoryInput').value = '';
+  }
 
-    // Add the HTML content for the category row
-    newCategoryRow.innerHTML = `
+  // Create a new category row
+  const newCategoryRow = document.createElement('div');
+  newCategoryRow.classList.add('mb-3');
+
+  // Add the HTML content for the category row
+  newCategoryRow.innerHTML = `
       <div class="flex justify-between items-center">
         <span class="tag is-primary is-light">${categoryName}</span>
         <div class="flex items-center space-x-2">
@@ -184,13 +191,13 @@ addCategoryButton.addEventListener('click', (event) => {
       </div>
     `;
 
-    // Append the new category row to the "Categories" container
-    categoriesContainer.appendChild(newCategoryRow);
+  // Append the new category row to the "Categories" container
+  categoriesContainer.appendChild(newCategoryRow);
 
-    // Clear the input field
-    $('#categoryInput').value = '';
-  }
-});
+  // Clear the input field
+  $('#categoryInput').value = '';
+}
+);
 
 // Get a reference to the "Categories" container
 const categoriesContainer = $('#categories');
@@ -222,7 +229,15 @@ editCategoryButton.addEventListener('click', (event) => {
 
   // Get the edited category name from the input field
   const editedCategoryName = $('#editCategoryNameInput').value;
-
+  // Update the value on categorySelect
+  const categorySelect = $('#categorySelect');
+  const options = categorySelect.options;
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].text === editedCategoryName) {
+      options[i].text = editedCategoryName;
+      break; // End for when it is a match 
+    }
+  }
   // Get the currently selected category row
   const selectedCategoryRow = $('.selected-category');
 
@@ -334,4 +349,42 @@ cancelEditCategoryButton.addEventListener('click', (event) => {
 editCategoryButton.addEventListener('click', (event) => {
   event.preventDefault();
   updateCategoryName();
+});
+
+
+// Add a click event to the "Edit" button in the operations table
+const operationsTable = $('#operationsTable');
+
+operationsTable.addEventListener('click', (event) => {
+  const editButton = event.target.closest('.edit-button');
+  const deleteButton = event.target.closest('.delete-button');
+
+  if (editButton) {
+    event.preventDefault();
+    // Hide all sections
+    hideAllSections();
+
+    // Show the "editTransactionView" section
+    showSection('editTransactionView');
+  } else if (deleteButton) {
+    event.preventDefault();
+
+    // Find the row that contains the clicked "Delete" button
+    const operationRow = deleteButton.closest('tr');
+
+    // Remove the operation row from the table
+    operationRow.remove();
+
+    // Check if there are no more rows in the table
+    const operationsRows = $$('#operationsTable tr');
+    if (operationsRows.length === 0) {
+      // If there are no more rows, show the "No results" message
+      const noOperations = $('#noOperations');
+      noOperations.classList.remove('hidden');
+
+      // Hide the "withOperations" table
+      const withOperations = $('#withOperations');
+      withOperations.classList.add('hidden');
+    }
+  }
 });
