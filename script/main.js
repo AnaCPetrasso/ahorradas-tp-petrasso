@@ -280,21 +280,58 @@ editLinks.forEach((editLink) => {
     showSection('editCategoryView');
   });
 });
-// Add a click event listener to the "Edit Category" button
 
-editCategoryButton.addEventListener('click', (event) => {
-  event.preventDefault();
 
+// Function to  the "editCategoryNameInput" and show the "editCategoryView" section
+function editCategory() {
+  // Get the current category name from the <span> element
+  const categorySpan = $('#categoryView .tag.is-primary.is-light');
+  const currentCategoryName = categorySpan.textContent;
+
+  // Set the current category name in the "editCategoryNameInput"
+  $('#editCategoryNameInput').value = currentCategoryName;
+
+  // Show the "editCategoryView" section
+  showSection('editCategoryView');
+}
+
+// Function to cancel editing and return to "categoryView"
+function cancelEditCategory() {
+  showSection('categoryView');
+}
+
+// Function to update the category name and return to "categoryView"
+function updateCategoryName() {
   // Get the edited category name from the input field
   const editedCategoryName = $('#editCategoryNameInput').value;
 
-  // Find the span element within the "editCategoryView" section
-  const categorySpan = $('#editCategoryView .tag.is-primary.is-light');
+  // Find the span element within the "categoryView" section
+  const categorySpan = $('#categoryView .tag.is-primary.is-light');
 
   // Update the content of the span with the edited category name
   categorySpan.textContent = editedCategoryName;
 
-  // Switch back to the "Categories" view
-  hideAllSections();
-  showSection('categoriesView');
+  // Show the "categoryView" section
+  showSection('categoryView');
+}
+
+// Add a click event to the "Edit" link in "categoryView"
+const editLink = $('#categoryView .edit-link');
+editLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  editCategory();
+});
+
+// Add a click event to the "Cancel" button in "editCategoryView"
+
+cancelEditCategoryButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  cancelEditCategory();
+});
+
+// Add a click event to the "Edit Category" button in "editCategoryView"
+
+editCategoryButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  updateCategoryName();
 });
