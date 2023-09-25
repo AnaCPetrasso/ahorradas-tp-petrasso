@@ -154,3 +154,87 @@ addOperationButton.addEventListener('click', (event) => {
   hideAllSections(); // Hide all sections
   showSection('balanceView'); // Show the "Balance" section
 });
+// Get a reference to the "Add Category" button
+const addCategoryButton = $('#addCategoryButton');
+
+// Add a click event to the "Add Category" button
+addCategoryButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  // Get the category name from the input field
+  const categoryName = $('#categoryInput').value;
+
+  // Get a reference to the "Categories" container
+  const categoriesContainer = $('#categories');
+
+  // Create a new category row
+  const newCategoryRow = document.createElement('div');
+  newCategoryRow.classList.add('mb-3');
+
+  // Add the HTML content for the category row
+  newCategoryRow.innerHTML = `
+    <div class="flex justify-between items-center">
+      <span class="tag is-primary is-light">${categoryName}</span>
+      <div class="flex items-center space-x-2">
+        <a href="#" class="mr-4 is-size-7 edit-link">Edit</a>
+        <a href="#" class="is-size-7 delete-link">Delete</a>
+      </div>
+    </div>
+  `;
+
+  // Append the new category row to the "Categories" container
+  categoriesContainer.appendChild(newCategoryRow);
+
+  // Clear the input field
+  $('#categoryInput').value = '';
+});
+// Get a reference to the "Categories" container
+const categoriesContainer = $('#categories');
+
+// Add a click event listener for delete links and edit links
+categoriesContainer.addEventListener('click', (event) => {
+  const deleteLink = event.target.closest('.delete-link');
+  const editLink = event.target.closest('.edit-link');
+
+  if (deleteLink) {
+    event.preventDefault();
+    const categoryRow = deleteLink.closest('.mb-3');
+    if (categoryRow) {
+      categoryRow.remove();
+    }
+  } else if (editLink) {
+    event.preventDefault();
+    // Navigate to the "Edit Transaction" section
+    hideAllSections();
+    showSection('editCategoryView');
+  }
+});
+
+// Add a click event to the "Add Category" button
+addCategoryButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  // Get the category name from the input field
+  const categoryName = $('#categoryInput').value;
+
+  // Create a new category row
+  const newCategoryRow = document.createElement('div');
+  newCategoryRow.classList.add('mb-3');
+
+  // Add the HTML content for the category row
+  newCategoryRow.innerHTML = `
+    <div class="flex justify-between items-center">
+      <span class="tag is-primary is-light">${categoryName}</span>
+      <div class="flex items-center space-x-2">
+        <a href="#" class="mr-4 is-size-7 edit-link">Edit</a>
+        <a href="#" class="is-size-7 delete-link">Delete</a>
+      </div>
+    </div>
+  `;
+
+  // Append the new category row to the "Categories" container
+  categoriesContainer.appendChild(newCategoryRow);
+
+  // Clear the input field
+  $('#categoryInput').value = '';
+});
