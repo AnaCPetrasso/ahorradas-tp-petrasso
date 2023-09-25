@@ -267,3 +267,16 @@ categoriesContainer.addEventListener('click', (event) => {
 
   }
 });
+// Go to "editCategoryView" 
+const editLinks = $$('#categoryView .edit-link');
+editLinks.forEach((editLink) => {
+  editLink.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    // Hide all sections
+    hideAllSections();
+
+    // Show "editCategoryView"
+    showSection('editCategoryView');
+  });
+});
