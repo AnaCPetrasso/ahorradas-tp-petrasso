@@ -264,8 +264,6 @@ categoriesContainer.addEventListener('click', (event) => {
     // Mark the selected category row for reference
     selectedCategoryRow.classList.add('selected-category');
 
-    // No ocultes la vista "editCategoryView", simplemente asegúrate de que no se oculte
-    // hideAllSections();
-    // showSection('editCategoryView');
+
   }
 });
