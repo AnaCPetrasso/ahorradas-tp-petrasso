@@ -280,3 +280,21 @@ editLinks.forEach((editLink) => {
     showSection('editCategoryView');
   });
 });
+// Add a click event listener to the "Edit Category" button
+
+editCategoryButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  // Get the edited category name from the input field
+  const editedCategoryName = $('#editCategoryNameInput').value;
+
+  // Find the span element within the "editCategoryView" section
+  const categorySpan = $('#editCategoryView .tag.is-primary.is-light');
+
+  // Update the content of the span with the edited category name
+  categorySpan.textContent = editedCategoryName;
+
+  // Switch back to the "Categories" view
+  hideAllSections();
+  showSection('categoriesView');
+});
