@@ -47,3 +47,21 @@ newOperationButton.addEventListener('click', (event) => {
     newOperationSection.classList.remove('hidden');
   }
 });
+
+const cancelButton = $('#cancelAddOperationButton');
+
+// Encontrar la sección "balanceView"
+const balanceViewSection = $('#balanceView');
+
+// Agregar un evento de clic al botón para cambiar de sección
+cancelButton.addEventListener('click', () => {
+  // Ocultar todas las secciones (si es necesario)
+  const sections = $$('.section');
+  sections.forEach((section) => {
+    section.classList.add('hidden');
+  });
+
+  // Mostrar la sección "balanceView"
+  balanceViewSection.classList.remove('hidden');
+});
+
