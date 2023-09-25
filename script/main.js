@@ -1,87 +1,85 @@
-const $ = (selector) => document.querySelector(selector)
-const $$ = (selector) => document.querySelectorAll(selector)
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
 
-// Obtener todos los elementos del menú de navegación
-const navItems = $$('.navbarItem');
-
-// Agrega un event listener a cada elemento del menú
-navItems.forEach((navItem) => {
-  navItem.addEventListener('click', (event) => {
-    // Evita que se realice la acción predeterminada del enlace
-    event.preventDefault();
-
-    // Obtiene el valor del atributo data-section
-    const sectionId = navItem.getAttribute('data-section');
-
-    // Oculta todas las secciones
-    const sections = $$('.section');
-    sections.forEach((section) => {
-      section.classList.add('hidden');
-    });
-
-    // Muestra la sección correspondiente
-    const targetSection = $(`#${sectionId}`);
-    if (targetSection) {
-      targetSection.classList.remove('hidden');
-    }
-  });
-});
-
-// Obtener el botón "New Operation"
-const newOperationButton = $('#newOperation');
-
-// Agrega un event listener al botón
-newOperationButton.addEventListener('click', (event) => {
-  // Evita que se realice la acción predeterminada del botón
-  event.preventDefault();
-
-  // Oculta todas las secciones
+// Function to hide all sections
+function hideAllSections() {
   const sections = $$('.section');
   sections.forEach((section) => {
     section.classList.add('hidden');
   });
+}
 
-  // Muestra la sección "New Operation"
-  const newOperationSection = $('#operationView');
-  if (newOperationSection) {
-    newOperationSection.classList.remove('hidden');
+// Function to show a section by its ID
+function showSection(sectionId) {
+  const targetSection = $(`#${sectionId}`);
+  if (targetSection) {
+    targetSection.classList.remove('hidden');
   }
+}
+
+// Function to toggle text and visibility of filters
+function toggleFilters() {
+  const filters = $('#filters');
+  const toggleFiltersButton = $('#toggleFilters');
+
+  if (filters.style.display === 'block') {
+    filters.style.display = 'none';
+    toggleFiltersButton.textContent = 'Show filters';
+  } else {
+    filters.style.display = 'block';
+    toggleFiltersButton.textContent = 'Hide filters';
+  }
+}
+
+// Get all navigation menu items
+const navItems = $$('.navbarItem');
+
+// Add an event listener to each menu item
+navItems.forEach((navItem) => {
+  navItem.addEventListener('click', (event) => {
+    event.preventDefault();
+    const sectionId = navItem.getAttribute('data-section');
+
+    // Hide all sections and show the corresponding section
+    hideAllSections();
+    showSection(sectionId);
+  });
+});
+
+// Get the "New Operation" button
+const newOperationButton = $('#newOperation');
+
+// Add an event listener to the button
+newOperationButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  // Hide all sections and show the "New Operation" section
+  hideAllSections();
+  showSection('operationView');
 });
 
 const cancelButton = $('#cancelAddOperationButton');
 
-// Encontrar la sección "balanceView"
+// Find the "balanceView" section
 const balanceViewSection = $('#balanceView');
 
-// Agregar un evento de clic al botón para cambiar de sección
+// Add a click event to the button to switch sections
 cancelButton.addEventListener('click', () => {
-  // Ocultar todas las secciones (si es necesario)
-  const sections = $$('.section');
-  sections.forEach((section) => {
-    section.classList.add('hidden');
-  });
+  // Hide all sections (if needed)
+  hideAllSections();
 
-  // Mostrar la sección "balanceView"
-  balanceViewSection.classList.remove('hidden');
+  // Show the "balanceView" section
+  showSection('balanceView');
 });
-// Obtener una referencia al botón "toggleFilters" por su ID
+
+// Get a reference to the "toggleFilters" button by its ID
 const toggleFiltersButton = $('#toggleFilters');
 
-// Obtener una referencia a los filtros por su ID
-const filters = $('#filters');
-
-// Agrega un event listener al botón "toggleFilters"
+// Add an event listener to the "toggleFilters" button
 toggleFiltersButton.addEventListener('click', (event) => {
-  // Evita que se realice la acción predeterminada del enlace
   event.preventDefault();
 
-  // Cambia la visibilidad de los filtros
-  if (filters.style.display === 'block') {
-    filters.style.display = 'none';
-    toggleFiltersButton.textContent = 'Show filters'; // Cambia el texto del botón
-  } else {
-    filters.style.display = 'block';
-    toggleFiltersButton.textContent = 'Hide filters'; // Cambia el texto del botón
-  }
+  // Toggle the visibility of filters
+  toggleFilters();
 });
 
